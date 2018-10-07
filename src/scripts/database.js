@@ -55,7 +55,7 @@ const flashCardsSets = {
       },
       {
         question: `(function(){var a = b = 3;})();<br>
-      console.log(\'typeof b is \' + typeof b);<br>
+      console.log('typeof b is ' + typeof b);<br>
       <b>Expected result is ...</b>`,
         longDescription: `var a = b = 3; is shorthand for the statements
       b = 3; and var a = b;
@@ -115,7 +115,7 @@ const flashCardsSets = {
         question: `console.log(['alex', 'sam'] + ['jon', 'mary']);<br>
       <b>Expected result is ...</b>`,
         longDescription:
-          'Arrays’ are represented as strings which are then added together.',
+          'Arrays are represented as strings which are then added together.',
         answers: [
           {
             rigth: true,
@@ -145,51 +145,51 @@ const flashCardsSets = {
             rigth: false,
             text: `['alex', 'sam', ['jon', 'mary']]`,
           },
-          {
-            question: `const a = 100;<br>
-          const b = \'Telerik\';<br>
+        ],
+      },
+      {
+        question: `const a = 100;<br>
+          const b = 'Telerik';<br>
           const c = false;<br>
           console.log(a || b);<br>
           <b>Expected result is ...</b>`,
-            longDescription: `When you use the || operator,
+        longDescription: `When you use the || operator,
           if the first value casts to true you will get that value returned.
           Otherwise, you will always get the second one.`,
-            answers: [
-              {
-                rigth: true,
-                text: '100',
-              },
-              {
-                rigth: false,
-                text: 'a',
-              },
-              {
-                rigth: false,
-                text: 'Telerik',
-              },
-              {
-                rigth: false,
-                text: 'true',
-              },
-              {
-                rigth: false,
-                text: 'false',
-              },
-              {
-                rigth: false,
-                text: 'b',
-              },
-              {
-                rigth: false,
-                text: 'c',
-              },
-            ],
+        answers: [
+          {
+            rigth: true,
+            text: '100',
+          },
+          {
+            rigth: false,
+            text: 'a',
+          },
+          {
+            rigth: false,
+            text: 'Telerik',
+          },
+          {
+            rigth: false,
+            text: 'true',
+          },
+          {
+            rigth: false,
+            text: 'false',
+          },
+          {
+            rigth: false,
+            text: 'b',
+          },
+          {
+            rigth: false,
+            text: 'c',
           },
         ],
       },
       {
         question: `const a = 100;<br>
-      const b = \'Telerik\';<br>
+      const b = 'Telerik';<br>
       const c = null;\nconsole.log(a && b);<br>
       <b>Expected result is ...</b>`,
         longDescription: `When you use the && operator 
