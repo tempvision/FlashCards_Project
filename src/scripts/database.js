@@ -282,5 +282,97 @@ const flashCardsSets = {
       },
     ],
   },
+  DSABasics: {
+    categoryName: 'DSABasics',
+    flashcards: [
+      {
+        question: `Which one of the following is incorrect: `,
+        longDescription: `It is a search algorithm that finds the position of a target value within a sorted array. 
+     Binary search runs in logarithmic time in the worst case, making O(log n) comparisons.`,
+        answers: [
+          {
+            rigth: true,
+            text: 'Binary search algorithm can be used over objects',
+          },
+          {
+            rigth: false,
+            text: 'Binary search algorithm can be used over sorted arrays',
+          },
+          {
+            rigth: false,
+            text: 'Binary search algorithm is logarithmic running-time algorithm',
+          },
+          {
+            rigth: false,
+            text: 'Binary search algorithm has a recursive and iterative implementations',
+          },
+          {
+            rigth: false,
+            text: 'Binary search algorithm can be used over unsorted array',
+            // You can use it but it is most likely to miss the element you are looking for
+          },
+          {
+            rigth: false,
+            text: 'Binary seach algorithm is not a sorting algorithm',
+          },
+        ],
+      },
+      {
+        question: `Recursion is: `,
+        longDescription: `Recursion in computer science is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.`,
+        answers: [
+          {
+            rigth: true,
+            text: 'A method of solving smaller instances of the same problem',
+          },
+          {
+            rigth: false,
+            text: 'A sorting algorithm',
+          },
+          {
+            rigth: false,
+            text: 'A type of graph',
+          },
+          {
+            rigth: false,
+            text: 'The only method for solving problems',
+          },
+          {
+            rigth: false,
+            text: 'Collection of elements',
+            // You can use it but it is most likely to miss the element you are looking for
+          },
+        ],
+      },
+      {
+        question: `Arrays can be accessed by index with the following time complexity:`,
+        longDescription: `Arrays can be accessed by index with complexity of Θ(1) because the index n of an array points to the n+1-th element in the array (using zero-based indexing).`,
+        answers: [
+          {
+            rigth: true,
+            text: 'Θ(1)',
+          },
+          {
+            rigth: false,
+            text: 'Θ(n)',
+          },
+          {
+            rigth: false,
+            text: 'Θ(log(n))',
+          },
+          {
+            rigth: false,
+            text: 'Θ(n*n)',
+          },
+          {
+            rigth: false,
+            text: 'None of the above',
+            // You can use it but it is most likely to miss the element you are looking for
+          },
+        ],
+      },
+
+    ],
+  },
 };
 export default flashCardsSets;
