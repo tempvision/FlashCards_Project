@@ -5,7 +5,7 @@ import * as flip from './scripts/jquery.flip.min.js';
 import * as cardOperations from './scripts/card.operations.js';
 import { createAnswersElements } from './scripts/createAnswersElements';
 
-const newCardSet = questionsOperations.createCardSet('JSAdvanced', 2);
+const newCardSet = questionsOperations.createCardSet(0, 2);
 $('#cardText').append(`<p>${newCardSet[0].question}<p>`);
 $('#cardDescription').append(`<p>${newCardSet[0].longDescription}<p>`);
 $('#card').flip({ axis: 'x', trigger: 'manual' });
