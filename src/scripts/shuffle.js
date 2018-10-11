@@ -1,22 +1,18 @@
-const shuffle = function(array, n) {
+const shuffle = function(arrayToShuffle, n) {
   // n - amount of elements in result
-  const maxIndex = array.length - 1;
-  const randomEntries = new Map();
-  const shuffledArray = [];
-  if (n > maxIndex) {
-    n = maxIndex;
+  const shuffledArray = arrayToShuffle
+    .map((el) => ({
+      indexForSorting: Math.random(),
+      value: el,
+    }))
+    .sort((a, b) => a.indexForSorting - b.indexForSorting);
+  if (n >= arrayToShuffle.length) {
+    return shuffledArray.map((el) => el.value);
   }
+  const resultArray = [];
   while (n--) {
-    const randomIndex = Math.floor(Math.random() * maxIndex);
-    if (!randomEntries.has(randomIndex)) {
-      randomEntries.set(randomIndex, array[randomIndex]);
-    } else {
-      n++;
-    }
+    resultArray.push(shuffledArray[n].value);
   }
-  randomEntries.forEach((el) => {
-    shuffledArray.push(el);
-  });
-  return shuffledArray;
+  return resultArray;
 };
 export default shuffle;

@@ -23,6 +23,13 @@
   "devDependencies": {
     "babel-eslint": "^8.2.6",
     "eslint": "^5.4.0",
-    "eslint-config-google": "^0.9.1"
+    "eslint-config-google": "^0.9.1",
+    "live-server": "^1.2.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.3.14",
+    "jquery": "^3.3.1"
   }
 }

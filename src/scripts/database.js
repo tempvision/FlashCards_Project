@@ -284,7 +284,7 @@ const flashCardsSets = {
   },
   DSABasics: {
     categoryName: 'DSABasics',
-    flashcards: [
+    flashCards: [
       {
         question: `Which one of the following is incorrect: `,
         longDescription: `It is a search algorithm that finds the position of a target value within a sorted array. 
@@ -376,7 +376,7 @@ const flashCardsSets = {
   },
   JSAdvanced: {
     categoryName: 'JSAdvanced',
-    flashcards: [
+    flashCards: [
       {
         question: `What will the code below output to the console and why?<br>
         (function(){<br>
