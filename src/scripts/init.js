@@ -4,14 +4,14 @@ import endSession from './endSession.js';
 import * as $ from 'jquery';
 let currentSet = [];
 let currentQuestion = 2;
-import * as $ from 'jquery';
+
 
 const skipButton = function() {
     $('#skipButton').append('<p> SKIP </p>').bind('click', () => {
-        console.log('YES'); currentSet.unshift(currentQuestion);
-        if (currentSet.length > 1) {
+       currentSet.unshift(currentQuestion);
+        if (currentSet.length >= 1) {
+            window.sessionStorage.currentQuestion--;
             createNext();
-            console.log('no');
         } else {
             $('#skipButton').hide();
         }
