@@ -1,12 +1,10 @@
-const checkIfTrue = function(id) {
-    if (questionMap.get(id)) {
+const checkIfTrue = function (id) {
+    if (questionMap.get(id))
         console.log('true');
-    } else console.log('false');
-};
+    else console.log('false');
+}
 
-const buttons = Array.from(document.getElementsByClassName('button'));
+const buttons = Array.from(document.getElementsByClassName("button"));
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        checkIfTrue(button.id);
-    });
-});
+    button.addEventListener("click", () => { checkIfTrue(button.id) })
+})
