@@ -1,3 +1,6 @@
+body {
+  background: url(BackGround.jpg);
+}
 .front,
 .back {
   background: grey;
@@ -8,9 +11,11 @@
   box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
   margin: auto;
   padding: 15px;
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: white;
   text-align: center;
+  overflow-y: auto;
+  cursor: pointer;
 }
 #card {
   width: 400px;
@@ -20,4 +25,48 @@
 #card p {
   text-align: left;
   font-family: monospace;
+}
+
+nav {
+  height: 100px;
+  background: aquamarine;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  line-height: 100px;
+  margin: 10px;
+}
+
+#answersContainer {
+  width: 400px;
+  margin: auto;
+  padding: 15px;
+}
+.ansBtn {
+  background: antiquewhite;
+  width: 100%;
+  margin: 5px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+#start {
+  width: 100px;
+  margin: auto;
+  background: green;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+#results {
+  width: 350px;
+  height: 75px;
+  margin: auto;
+  font-size: 50px;
+  background: rgb(212, 26, 119);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+
 }
