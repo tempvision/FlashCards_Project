@@ -70,3 +70,13 @@ nav {
   text-align: center;
 
 }
+
+#counter {
+  
+    float: right;
+    font-size: 4.8vw;
+    color: white;
+    margin-top: -200px;
+    margin-right: 30px;
+
+}
