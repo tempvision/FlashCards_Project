@@ -58,3 +58,15 @@ nav {
   cursor: pointer;
   text-align: center;
 }
+
+#results {
+  width: 350px;
+  height: 75px;
+  margin: auto;
+  font-size: 50px;
+  background: rgb(212, 26, 119);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+
+}
