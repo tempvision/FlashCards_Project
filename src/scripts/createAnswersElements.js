@@ -20,10 +20,18 @@ const createAnswersElements = function(answers) {
     $('#answersContainer').append(
         `<div id="ans3" class="ansBtn">None of the above</div>`
     );
+
+
     $(`#ans3`).bind('click', () => {
         checkIfTrue(3, answers);
         createNext();
     });
+
+    $('.ansBtn')
+        .hide()
+        .slideDown(800, 'swing')
+        .css('opacity', 0)
+        .animate({ opacity: 1 }, { queue: false, duration: 1000 });
 };
 
 export default createAnswersElements;

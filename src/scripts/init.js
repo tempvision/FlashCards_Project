@@ -1,7 +1,7 @@
 import createCardset from './createCardSet.js';
 import createCardAnswersPair from './createCardAnswersPair.js';
 import endSession from './endSession.js';
-let currentSet = {};
+let currentSet = [];
 
 const createNext = function() {
     // creates the elements from the next question
@@ -13,6 +13,7 @@ const createNext = function() {
     createCardAnswersPair(currentQuestion);
     window.sessionStorage.currentQuestion++;
 };
+
 
 const init = function(catName, questionsAmount) {
     // create the current set
