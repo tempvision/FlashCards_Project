@@ -20,4 +20,24 @@
 #card p {
   text-align: left;
   font-family: monospace;
+  font-size: 10px;
 }
+
+.answer {
+  margin-top:5%;
+  display: table;
+  background-color: black;
+  color:white;
+  text-align: center;
+  height: 50px;
+  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
+  border-radius: 17px;
+}
+
+.btn-animate {
+  margin: auto;
+  margin-top:25px;
+}
+

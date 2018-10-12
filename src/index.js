@@ -12,3 +12,12 @@ $('#card').flip({ axis: 'x', trigger: 'manual' });
 $('#flipBtn').bind('click', () => {
   cardOperations.cardFlipping('card');
 });
+
+
+// slide down and fade in to the answers
+$('.btn-animate').append('<p>Аnswer_Аnswer_Аnswer_Аnswer_Аnswer</p>')
+.hide()
+.slideDown(1200, 'swing')
+.css('opacity', 0)
+.animate({ opacity: 1 }, { queue: false, duration: 1000 });
+
