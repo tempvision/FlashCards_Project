@@ -15,7 +15,3 @@ const skipButton = function () {
   createNext();
 };
 
-$('#skipButton').append('<p> SKIP </p>').bind('click', () => {
-  console.log('skipped');
-  skipButton();
-});
