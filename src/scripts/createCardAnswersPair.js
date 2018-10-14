@@ -6,8 +6,14 @@ const createCardAnswersPair = function() {
   $('#answersContainer').remove();
   $('#cardText').empty();
   $('#cardText').append(`<p>${currentQuestion.question}<p>`);
-  // $('#cardDescription').append(`<p>${questionObject.longDescription}<p>`);
-  // $('#card').flip({ axis: 'x', trigger: 'manual' });
-  createAnswersElements(currentQuestion.answers);
+  if ($('#quizMode').css('display') === 'none') {
+    let deg = 0;
+    $('#card').click(() => {
+      $('#card').css('transform', `rotateX(${(deg += 180)}deg)`);
+    });
+    $('#cardDescription').append(`<p>${currentQuestion.longDescription}<p>`);
+  } else {
+    createAnswersElements(currentQuestion.answers);
+  }
 };
 export default createCardAnswersPair;

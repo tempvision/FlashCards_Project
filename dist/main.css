@@ -1,53 +1,73 @@
-body {
+body,
+html {
   background: url(BackGround.jpg);
+  height: 100%;
+  overflow: hidden;
 }
-.front,
-.back {
+#cardText,
+#cardDescription {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background: grey;
   border: 1px solid green;
   border-radius: 5px;
   -webkit-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
   -moz-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
   box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
-  margin: auto;
-  padding: 15px;
-  font-size: 1.5vw;
-  color: white;
   text-align: center;
   overflow-y: auto;
   cursor: pointer;
 }
+
 #card {
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+#cardDescription {
+  transform: rotateX(180deg);
+}
+#flip-box {
+  background-color: transparent;
   width: 400px;
   height: 250px;
-  margin: auto;
+  perspective: 1000px;
+  margin: 20px auto;
 }
+
 #card p {
   text-align: left;
   font-family: monospace;
+  padding: 15px;
+  font-size: 1.5vw;
+  color: white;
 }
 
 nav {
-  height: 100px;
-  background: aquamarine;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
   color: white;
   font-size: 22px;
-  line-height: 100px;
-  margin: 10px;
+  margin: 10px 0px 30px 0px;
 }
-
+nav span:hover {
+  cursor: pointer;
+  text-shadow: 0 0 3px #ff0000, 0 0 10px grey;
+}
 #answersContainer {
-  width: 400px;
   margin: auto;
   padding: 15px;
 }
 .ansBtn {
   background: antiquewhite;
-  width: 100%;
   margin: 5px;
   cursor: pointer;
   padding: 15px;
+}
+.ansBtn:hover {
+  background: whitesmoke;
 }
 
 #start {
@@ -68,27 +88,50 @@ nav {
   color: white;
   cursor: pointer;
   text-align: center;
-
 }
 
 #counter {
-  
-    float: right;
-    font-size: 4.8vw;
-    color: white;
-    margin-top: -200px;
-    margin-right: 30px;
-
+  float: right;
+  font-size: 4.8vw;
+  color: white;
+  margin-top: -200px;
+  margin-right: 30px;
 }
 #skipButton > p {
   float: right;
-  
   font-size: 2.2vw;
   color: aliceblue;
-  background-color:gray;
-  margin:5vw;
-  margin-right:25vw;
+  background-color: gray;
+  margin: 5vw;
+  margin-right: 25vw;
   height: 1.2em;
-  margin-top:11vw;
-  
+  margin-top: 11vw;
+  cursor: pointer;
+}
+
+.rightAnswer,
+.rightAnswer:hover {
+  transition: transform 0.2s;
+  background-color: green;
+  color: white;
+}
+.wrongAnswer,
+.wrongAnswer:hover {
+  transition: transform 0.2s;
+  background-color: red;
+  color: white;
+}
+.flipOnHover:hover {
+  transform: rotateX(180deg);
+}
+.half {
+  background: green;
+  width: 49%;
+  background-color: rgba(119, 144, 164, 0.69);
+}
+#wrapper {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
 }

@@ -71,3 +71,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# Webpack output file
+./dist/main.js

@@ -10,18 +10,28 @@
 </head>
 
 <body>
-    <nav>Main menu</nav>
-    <div id="card" class="unFlipped">
-        <div id="cardText" class="front"></div>
-        <!-- <div id="cardDescription" class="back"> -->
+    <nav><span id="selectMode">Select Mode</span><span>Category</span><span>Stats</span><span>About</span></nav>
+    <div id="wrapper">
+
+        <div id="flip-box">
+            <div id="card" class="deg0">
+                <div id="cardText"></div>
+                <div id="cardDescription"></div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <!-- <button id="flipBtn">FLIP</button> -->
+        <div id="start">START QUIZ</div>
+        <br>
+        <div id="startL">START learn</div>
+        <!-- <div id="skipButton"></div> -->
+        <div id="learnMode">LEARN</div>
+        <div id="quizMode" style="display:block">Quiz</div>
     </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <!-- <button id="flipBtn">FLIP</button> -->
-    <div id="start">START test</div>
-    <div id="skipButton"></div>
+
     <script src="./main.js"></script>
 </body>
 
