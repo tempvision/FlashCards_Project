@@ -2,7 +2,6 @@ import shuffle from './shuffle.js';
 import * as $ from 'jquery';
 import { checkIfTrue } from './checkIfTrue.js';
 import { createNext } from './createNext.js';
-<<<<<<< HEAD
 const flippingCurrentCard = function() {
   const el = $('#card');
   const elClass = el.attr('class');
@@ -18,21 +17,6 @@ const createAnswersElements = function(answers) {
   answers = shuffle(answers, 3);
   $('#flip-box').append('<div id="answersContainer"></div>');
   answers.forEach((answer, i) => {
-=======
-
-const createAnswersElements = function(answers) {
-    answers = shuffle(answers, 3);
-        $('body').append('<div id="answersContainer"></div>');
-        answers.forEach((answer, i) => {
-        $('#answersContainer').append(
-            `<div id="ans${i}" class="ansBtn">${answer.text}</div>`);
-        $(`#ans${i}`).bind('click', () => {
-            checkIfTrue(i, answers);
-            createNext();
-        });
-    });
-
->>>>>>> master
     $('#answersContainer').append(
       `<div id="ans${i}" class="ansBtn">${answer.text}</div>`
     );

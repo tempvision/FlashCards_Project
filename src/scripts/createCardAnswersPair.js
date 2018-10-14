@@ -6,7 +6,6 @@ const createCardAnswersPair = function() {
   $('#answersContainer').remove();
   $('#cardText').empty();
   $('#cardText').append(`<p>${currentQuestion.question}<p>`);
-<<<<<<< HEAD
   if ($('#quizMode').css('display') === 'none') {
     let deg = 0;
     $('#card').click(() => {
@@ -16,10 +15,5 @@ const createCardAnswersPair = function() {
   } else {
     createAnswersElements(currentQuestion.answers);
   }
-=======
-  // $('#cardDescription').append(`<p>${questionObject.longDescription}<p>`);
-  // $('#card').flip({ axis: 'x', trigger: 'manual' });
-  createAnswersElements(currentQuestion.answers);
->>>>>>> master
 };
 export default createCardAnswersPair;

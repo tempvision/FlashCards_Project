@@ -7,16 +7,11 @@ $('#start').bind('click', () => {
   init(catName, cardAmount);
   $('#start').hide();
 });
-$('#startL').bind('click', () => {
-  initL(catName, cardAmount);
-  $('#start').hide();
-  $('#startL').hide();
-});
 
-const skipButton = function() {
-  currentSet.unshift(currentQuestion);
-  createNext();
-};
+// const skipButton = function() {
+//   currentSet.unshift(currentQuestion);
+//   createNext();
+// };
 $('#selectMode').click(() => {
   // const learnHalf = '<div class="half"></div>';
   $('#wrapper')
