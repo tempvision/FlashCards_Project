@@ -6,7 +6,6 @@ import * as $ from 'jquery';
 let currentQuestion = 0;
 
 const createNext = function() {
-    console.log(currentSet);
     // creates the elements from the next question
     if (currentSet.length === 0) {
         endSession();
@@ -17,8 +16,8 @@ const createNext = function() {
         $('#skipButton').remove();
     }
     document.getElementById('counter')
-        .innerHTML = `${window.sessionStorage.currentQuestion}
-                         /${window.sessionStorage.questionsAmount}`;
+        .innerHTML = `${Number(window.sessionStorage.currentQuestion)+1}
+                         / ${window.sessionStorage.questionsAmount}`;
     currentQuestion = currentSet.pop();
 
     createCardAnswersPair(currentQuestion);

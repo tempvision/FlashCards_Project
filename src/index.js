@@ -1,7 +1,7 @@
 import * as $ from 'jquery';
 import { init } from './scripts/init.js';
 
-const [catName, cardAmount, difficulty] = ['CS', 5, 'easy'];
+const [catName, cardAmount, difficulty] = ['jsBasics', 5, 'easy'];
 $('#quizMode').click(() => {
   startQuiz();
 });

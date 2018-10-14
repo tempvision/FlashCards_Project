@@ -9,12 +9,10 @@ const init = function(catName, questionsAmount, difficulty) {
   // starts results counter in session storage
   window.sessionStorage.questionsAmount = questionsAmount;
   window.sessionStorage.correctAmount = 0;
-  window.sessionStorage.currentQuestion = 1;
+  window.sessionStorage.currentQuestion = 0;
 
   $(
-    `<div id="counter">${
-      window.sessionStorage.currentQuestion
-    }/${questionsAmount}</div>`
+    `<div id="counter">${1}/ ${questionsAmount} </div>`
   ).insertAfter('#flip-box');
 
   if (catName === 'CS') {
@@ -24,9 +22,12 @@ const init = function(catName, questionsAmount, difficulty) {
         createNext();
         skipButton();
     });
+
     currentSet = api.apiGet(questionsAmount, difficulty);
 } else {
-    currentSet = createCardSet(catName, questionsAmount);
+
+    currentSet = createCardSet(catName, questionsAmount);  
+    console.log(currentSet)
     createNext();
     skipButton();
 }
