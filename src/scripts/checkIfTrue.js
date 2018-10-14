@@ -21,9 +21,11 @@ const checkIfTrue = function(id, answers) {
   if (answers[id].rigth) {
     window.sessionStorage.correctAmount++;
     $(`#ans${id}`).addClass('rightAnswer');
+    $('.ansBtn').unbind('click');
     return true;
   }
   $(`#ans${id}`).addClass('wrongAnswer');
+  $('.ansBtn').unbind('click');
   return false;
 };
 
