@@ -41,7 +41,7 @@ html {
   text-align: left;
   font-family: monospace;
   padding: 15px;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   color: white;
 }
 
@@ -57,7 +57,7 @@ nav span:hover {
   text-shadow: 0 0 3px #ff0000, 0 0 10px grey;
 }
 #answersContainer {
-  margin: auto;
+  margin: 20px auto;
   padding: 15px;
 }
 .ansBtn {
@@ -91,11 +91,11 @@ nav span:hover {
 }
 
 #counter {
-  float: right;
+  position: absolute;
   font-size: 4.8vw;
   color: white;
-  margin-top: -200px;
-  margin-right: 30px;
+  top: 15%;
+  right: 5%;
 }
 #skipButton > p {
   float: right;
@@ -127,11 +127,40 @@ nav span:hover {
 .half {
   background: green;
   width: 49%;
-  background-color: rgba(119, 144, 164, 0.69);
+  background-color: rgba(119, 144, 164, 0.7);
+}
+.half:hover #quizMode {
+  background-color: rgba(119, 144, 164, 0.9);
 }
 #wrapper {
   height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: space-around;
+}
+.modeBtn,
+#quizMode,
+#learnMode,
+#inQuiz {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 3vw;
+  cursor: pointer;
+}
+.modeBtn:hover {
+  text-shadow: 2px 2px 10px black;
+}
+#inQuiz {
+  right: 5%;
+  top: 10%;
+  cursor: default;
+}
+
+#quizMode {
+  right: 20%;
+}
+#learnMode {
+  left: 20%;
 }

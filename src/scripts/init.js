@@ -5,23 +5,24 @@ import { skipButton } from './skipButton.js';
 
 let currentSet = [];
 
-
 const init = function(catName, questionsAmount) {
-    // create the current set
+  // create the current set
 
-    currentSet = createCardset(catName, questionsAmount);
-    // starts results counter in session storage
-    window.sessionStorage.questionsAmount = questionsAmount;
-    window.sessionStorage.correctAmount = 0;
-    window.sessionStorage.currentQuestion = 1;
+  currentSet = createCardset(catName, questionsAmount);
+  // starts results counter in session storage
+  window.sessionStorage.questionsAmount = questionsAmount;
+  window.sessionStorage.correctAmount = 0;
+  window.sessionStorage.currentQuestion = 1;
 
-    $(`<div id="counter">${window.sessionStorage.currentQuestion}
-                        /${questionsAmount}</div>`)
-    .insertAfter('#card');
-    // calls the creator function
-    createNext();
-    // and the skip button
-    skipButton();
+  $(
+    `<div id="counter">${
+      window.sessionStorage.currentQuestion
+    }/${questionsAmount}</div>`
+  ).insertAfter('#flip-box');
+  // calls the creator function
+  createNext();
+  // and the skip button
+  skipButton();
 };
 
 export { init, currentSet };
