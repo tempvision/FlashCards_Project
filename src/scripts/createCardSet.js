@@ -28,4 +28,4 @@ const createCardSet = function(catName, n) {
   return questions;
 };
 
-export default createCardSet;
+export { createCardSet };

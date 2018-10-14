@@ -1,17 +1,14 @@
 import * as $ from 'jquery';
 import { init } from './scripts/init.js';
 
-const [catName, cardAmount] = ['jsBasics', 5];
+const [catName, cardAmount, difficulty] = ['CS', 5, 'easy'];
 
 $('#start').bind('click', () => {
-  init(catName, cardAmount);
+  init(catName, cardAmount, difficulty);
   $('#start').hide();
 });
 
-// const skipButton = function() {
-//   currentSet.unshift(currentQuestion);
-//   createNext();
-// };
+
 $('#selectMode').click(() => {
   // const learnHalf = '<div class="half"></div>';
   $('#wrapper')

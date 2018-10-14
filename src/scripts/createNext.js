@@ -6,11 +6,13 @@ import * as $ from 'jquery';
 let currentQuestion = 0;
 
 const createNext = function() {
+    console.log(currentSet);
     // creates the elements from the next question
     if (currentSet.length === 0) {
         endSession();
         return;
     }
+
     if (currentSet.length === 1) {
         $('#skipButton').remove();
     }
@@ -18,6 +20,7 @@ const createNext = function() {
         .innerHTML = `${window.sessionStorage.currentQuestion}
                          /${window.sessionStorage.questionsAmount}`;
     currentQuestion = currentSet.pop();
+
     createCardAnswersPair(currentQuestion);
     window.sessionStorage.currentQuestion++;
 };

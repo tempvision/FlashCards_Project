@@ -1,27 +1,38 @@
-import createCardset from './createCardSet.js';
+import { createCardSet } from './createCardSet.js'
 import * as $ from 'jquery';
 import { createNext } from './createNext.js';
 import { skipButton } from './skipButton.js';
-
+import api from './apiGet.js';
 let currentSet = [];
 
 
-const init = function(catName, questionsAmount) {
+const init = function(catName, questionsAmount, difficulty) {
     // create the current set
 
-    currentSet = createCardset(catName, questionsAmount);
+
     // starts results counter in session storage
     window.sessionStorage.questionsAmount = questionsAmount;
     window.sessionStorage.correctAmount = 0;
     window.sessionStorage.currentQuestion = 1;
 
-    $(`<div id="counter">${window.sessionStorage.currentQuestion}
+    $(`<div id="counter">${1}
                         /${questionsAmount}</div>`)
-    .insertAfter('#card');
-    // calls the creator function
-    createNext();
-    // and the skip button
-    skipButton();
+        .insertAfter('#card');
+    if (catName === 'CS') {
+        api.onResult((res) => {
+            currentSet = res;
+            console.log(currentSet);
+            createNext();
+            skipButton();
+        });
+        currentSet = api.apiGet(questionsAmount, difficulty);
+    } else {
+        currentSet = createCardSet(catName, questionsAmount);
+        createNext();
+        skipButton();
+    }
+
+
 };
 
 export { init, currentSet };
