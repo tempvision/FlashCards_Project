@@ -109,6 +109,7 @@ nav span:hover {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .rightAnswer,
 .rightAnswer:hover {
   transition: transform 0.2s;
@@ -135,3 +136,18 @@ nav span:hover {
   display: flex;
   justify-content: space-around;
 }
+=======
+}
+#skipButton > p {
+  float: right;
+  
+  font-size: 2.2vw;
+  color: aliceblue;
+  background-color:gray;
+  margin:5vw;
+  margin-right:25vw;
+  height: 1.2em;
+  margin-top:11vw;
+  
+}
+>>>>>>> master
