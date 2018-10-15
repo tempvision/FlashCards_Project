@@ -113,7 +113,7 @@ nav span:hover {
 
 #results {
   width: 350px;
-  height: 75px;
+  border-radius: 8px; 
   margin: auto;
   font-size: 50px;
   background: rgb(212, 26, 119);
