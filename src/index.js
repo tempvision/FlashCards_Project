@@ -5,33 +5,27 @@ import flashCardsSets from './scripts/database.js';
 
 // const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
 let [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
+
 $('.modeBtn').click((event) => {
   $(event.target).addClass('active');
   startQuiz();
 });
-<<<<<<< HEAD
-$('#category').click((event) => {
-  $(event.target).addClass('active');
-  $('#categoryDropdown').show();
-});
-=======
 $('#statScreen').bind('click', () => {
   statScreenLoad();
 });
 
 const visualizer = function(menuButtonId) {
   $('#wrapper').children().hide();
-    $(`#${menuButtonId}`).show();
-  };
->>>>>>> 430d66697b989180eebedb889d545a2a9b303574
+  $(`#${menuButtonId}`).show();
+};
 
-visualizer("statScreenDiv");
+// visualizer('statScreenDiv');
 const categoriesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
   allCategories.forEach((el) => {
     $('#categoryDropdown').append(
       `<span id="${el}" class="DdMenuElement">${
-        flashCardsSets[el].categoryName
+      flashCardsSets[el].categoryName
       }</span>`
     );
   });
@@ -65,11 +59,7 @@ const startQuiz = function() {
 };
 
 $('#selectMode').click(() => {
-  $('#cardScreen').hide();
-  $('.aboutPage').hide();
-  aboutPage();
-  $('#firstScreen').css('display', 'flex');
-  $('.modeBtn').removeClass('active');
+  visualizer('firstScreen');
 });
 const firstScreenAnimation = function() {
   $('#left').bind('mouseover', () => {
@@ -81,34 +71,27 @@ const firstScreenAnimation = function() {
 };
 firstScreenAnimation();
 
-<<<<<<< HEAD
-=======
 const statScreenLoad = () => {
-  //visualizer('statScreenDiv');
+  visualizer('statScreenDiv');
 
-  $('#totalAnsweredQuestions')
-  .append(`${window.localStorage.totalQuestionsAmount}`);
-  $('#correctAnswers')
-  .append(`${window.localStorage.totalCorrectQuestionsAmount}`);
-  $('#successRate')
-  .append(`${Math.floor(window.localStorage.totalCorrectQuestionsAmount*100
-                        /window.localStorage.totalQuestionsAmount)}`);
+  $('#totalAnsweredQuestions').empty()
+    .append(`${window.localStorage.totalQuestionsAmount}`);
+  $('#correctAnswers').empty()
+    .append(`${window.localStorage.totalCorrectQuestionsAmount}`);
+  $('#successRate').empty()
+    .append(`${Math.floor(window.localStorage.totalCorrectQuestionsAmount * 100
+      / window.localStorage.totalQuestionsAmount)}`);
 
   $(`#clearStatsButton`)
-  .bind('click', () => {
-    window.localStorage.totalCorrectQuestionsAmount='0';
-    window.localStorage.totalQuestionsAmount='0';
-    statScreenLoad();
-  });
+    .bind('click', () => {
+      window.localStorage.totalCorrectQuestionsAmount = '0';
+      window.localStorage.totalQuestionsAmount = '0';
+      statScreenLoad();
+    });
 };
 
->>>>>>> 430d66697b989180eebedb889d545a2a9b303574
-const aboutPage = function() {
+$('#statScreenBtn').bind('click', () => statScreenLoad());
+
   $('#about').bind('click', () => {
-    $('.aboutPage').css('display', 'block');
-    $('#firstScreen').css('display', 'none');
-    $('#cardScreen').css('display', 'none');
+    visualizer('aboutPage');
   });
-};
-
-aboutPage();

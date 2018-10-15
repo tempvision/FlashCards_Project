@@ -10,8 +10,11 @@
 </head>
 
 <body>
-    <nav><span class="menuBtn" id="selectMode">Select Mode</span><span class="menuBtn" id="category">All Categories</span>
-        <div id="categoryDropdown"></div><span class="menuBtn">Stats</span><span class="menuBtn">About</span>
+    <nav><span class="menuBtn" id="selectMode">Select Mode</span>
+        <span class="menuBtn" id="category">All Categories</span>
+        <div id="categoryDropdown"></div>
+        <span class="menuBtn" id="statScreenBtn">Stats</span>
+        <span class="menuBtn" id="about">About</span>
     </nav>
     <div id="wrapper">
         <div id="firstScreen">
@@ -31,7 +34,7 @@
             <div id="counter"></div>
             <div id="results" style="display:none"></div>
         </div>
-        <div id="statScreenDiv">
+        <div id="statScreenDiv" style="display: none">
             <div>Total answered questions:<span id="totalAnsweredQuestions"></span> </div><br>
             <div>Correct answers:<span id="correctAnswers"></span> </div><br>
             <div>Success rate:<span id="successRate"></span><br><br>
@@ -40,7 +43,7 @@
 
         </div>
 
-        <div class="aboutPage border_shadow">
+        <div class="aboutPage border_shadow" style="display: none" id="aboutPage">
             <p>A flashcard or flash card is a card bearing information, as words or numbers, on either or both sides,
                 used in classroom drills or in private study. One writes a question on a side and an answer overleaf.
                 Flashcards can bear vocabulary, historical dates, formulae or any subject matter that can be learned
