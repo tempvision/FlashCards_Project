@@ -1,8 +1,8 @@
-import { createCardSet } from './createCardSet.js';
+import { createCardSet } from './cardServices/createCardSet.js';
 import * as $ from 'jquery';
 import { createNext } from './createNext.js';
 import { skipButton } from './skipButton.js';
-import api from './apiGet.js';
+import api from './openTdbApi.js';
 let currentSet = [];
 
 const init = function(catName, questionsAmount, difficulty) {

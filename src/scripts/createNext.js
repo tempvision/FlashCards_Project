@@ -1,5 +1,5 @@
 import { currentSet } from './init.js';
-import createCardAnswersPair from './createCardAnswersPair.js';
+import createCardAnswersPair from './cardServices/createCardAnswersPair.js';
 import endSession from './endSession.js';
 import * as $ from 'jquery';
 

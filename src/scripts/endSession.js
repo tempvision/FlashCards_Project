@@ -30,7 +30,7 @@ const endSession = function() {
   $('#card').hide();
   $('#answersContainer').empty();
   $('#flip-box').hide();
-
+  $('#counter').hide();
   // display the results
   $('#results')
     .show()

@@ -27,7 +27,7 @@ const flashCardsSets = {
       {
         question: `(function(){var a = b = 3})();<br>
       console.log('typeof a is ' + typeof a);<br>
-      <b>Expected result is ...</b>`,
+      <br><br><b>Expected result is ...</b>`,
         longDescription: `var a = b = 3; is shorthand for the statements
       b = 3; and var a = b;
       b ends up being a global variable
@@ -56,7 +56,7 @@ const flashCardsSets = {
       {
         question: `(function(){var a = b = 3;})();<br>
       console.log('typeof b is ' + typeof b);<br>
-      <b>Expected result is ...</b>`,
+      <br><br><b>Expected result is ...</b>`,
         longDescription: `var a = b = 3; is shorthand for the statements
       b = 3; and var a = b;
       b ends up being a global variable
@@ -85,7 +85,7 @@ const flashCardsSets = {
       {
         question: `'use strict';<br>(function(){var a = b = 3;})();<br>
       console.log('typeof b is ' + typeof b);<br>
-      <b>Expected result is ...</b>`,
+      <br><br><b>Expected result is ...</b>`,
         longDescription: `In strict mode, the statement var a = b = 3;
       will generate a runtime error of ReferenceError: b is not defined`,
         answers: [
@@ -113,7 +113,7 @@ const flashCardsSets = {
       },
       {
         question: `console.log(['alex', 'sam'] + ['jon', 'mary']);<br>
-      <b>Expected result is ...</b>`,
+      <br><br><b>Expected result is ...</b>`,
         longDescription:
           'Arrays are represented as strings which are then added together.',
         answers: [
@@ -152,7 +152,7 @@ const flashCardsSets = {
           const b = 'Telerik';<br>
           const c = false;<br>
           console.log(a || b);<br>
-          <b>Expected result is ...</b>`,
+          <br><br><b>Expected result is ...</b>`,
         longDescription: `When you use the || operator,
           if the first value casts to true you will get that value returned.
           Otherwise, you will always get the second one.`,
@@ -191,7 +191,7 @@ const flashCardsSets = {
         question: `const a = 100;<br>
       const b = 'Telerik';<br>
       const c = null;\nconsole.log(a && b);<br>
-      <b>Expected result is ...</b>`,
+      <br><br><b>Expected result is ...</b>`,
         longDescription: `When you use the && operator 
       you will always get the second value
       if they are both coerced to true. If the first one casts to false
@@ -225,7 +225,7 @@ const flashCardsSets = {
       },
       {
         question: `console.log(15 + 3 + 'number');<br>
-      <b>Expected result is ...</b>`,
+      <br><br><b>Expected result is ...</b>`,
         longDescription: `Expression 15 + 3 is evaluated first.
       No need for coercion at all, since both operands are numbers.
       On the second step, expression 18 + 'number' is evaluated,
@@ -251,7 +251,7 @@ const flashCardsSets = {
       },
       {
         question: `console.log('number' + 15 + 3);<br>
-        <b>Expected result is ...</b>`,
+        <br><br><b>Expected result is ...</b>`,
         longDescription: `Operator + has left-to-right associativity,
       so expression 'number' + 15 runs first.
       Since one operand is a string,

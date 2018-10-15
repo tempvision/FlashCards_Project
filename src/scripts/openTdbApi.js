@@ -1,4 +1,3 @@
-import * as $ from 'jquery';
 let returnFucntion;
 
 const apiParse = function(apiData) {

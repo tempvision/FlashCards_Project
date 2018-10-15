@@ -1,8 +1,5 @@
 import shuffle from './shuffle.js';
-import flashCardsSets from './database.js';
-
-// receives category name(0 for all categories) + number of questions to return
-// returns array of questions
+import flashCardsSets from '../../db/database.js';
 
 const createCardSet = function(catName, n) {
   const keys = Object.keys(flashCardsSets);

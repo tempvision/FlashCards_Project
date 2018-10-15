@@ -1,6 +1,6 @@
-import { createAnswersElements } from './createAnswersElements.js';
+import { createAnswersElements } from '../domServices/createAnswersElements.js';
 import * as $ from 'jquery';
-import { currentQuestion } from './createNext.js';
+import { currentQuestion } from '../createNext.js';
 
 const createCardAnswersPair = function() {
   $('#answersContainer').remove();
@@ -12,7 +12,11 @@ const createCardAnswersPair = function() {
     let deg = 0;
     $('#card').click(() => {
       $('#card').css('transform', `rotateX(${(deg += 180)}deg)`);
+      $('#card')
+        .removeClass()
+        .addClass(`deg${deg}`);
     });
+    $('#cardText').append('<span>Click to flip</span>');
     $('#cardDescription')
       .empty()
       .append(`<p>${currentQuestion.longDescription}<p>`);

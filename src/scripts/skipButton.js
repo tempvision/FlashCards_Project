@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import { currentSet } from './init.js';
 import { currentQuestion, createNext } from './createNext.js';
+import { flippingCurrentCard } from './domServices/createAnswersElements.js';
 
 const skipButton = function() {
   $('#skipButton').show();
@@ -12,7 +13,6 @@ const skipButton = function() {
         // putting back the current question in the card set
         currentSet.unshift(currentQuestion);
         window.sessionStorage.currentQuestion--;
-
         // calling the next question
         createNext();
       });
@@ -22,7 +22,10 @@ const skipButton = function() {
       .append('Next')
       .bind('click', () => {
         // calling the next question
-        createNext();
+        flippingCurrentCard();
+        setTimeout(() => {
+          createNext();
+        }, 200);
       });
   }
 };
