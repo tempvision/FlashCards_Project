@@ -75,17 +75,18 @@ nav {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f8bc74', endColorstr='#00f8bc74',GradientType=1 );
 }
-nav > span {
+.menuBtn {
   cursor: pointer;
   padding: 0px 10px 0px 10px;
   line-height: 50px;
   margin: 0px 5px 0px 5px;
 }
-nav span:hover {
+.menuBtn:hover,
+.active {
   margin: 0px 5px 0px 5px;
   text-shadow: 0 0 3px #ff0000, 2px 2px 10px black;
-  /* -webkit-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
-  -moz-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69); */
+  -webkit-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.8);
   box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.8);
 }
 #answersContainer {
@@ -113,7 +114,7 @@ nav span:hover {
 
 #results {
   width: 350px;
-  border-radius: 8px; 
+  border-radius: 8px;
   margin: auto;
   font-size: 50px;
   background: rgb(212, 26, 119);
@@ -216,7 +217,9 @@ nav span:hover {
   display: none;
   position: absolute;
   z-index: 100;
-  width: 100px;
+  background: rgba(232, 128, 88, 1);
+  top: 60px;
+  margin: 0px 5px 0px 5px;
 }
 
 .aboutPage {
@@ -228,11 +231,23 @@ nav span:hover {
   padding: 10px;
   font-size: 25px;
   margin: auto;
-  background-color: rgba(232, 128, 88, 0.7)
+  background-color: rgba(232, 128, 88, 0.7);
 }
 
 .border_shadow {
   -webkit-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
   -moz-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
   box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
-  }
+}
+.DdMenuElement {
+  display: block;
+  cursor: pointer;
+  padding: 0px 10px 0px 10px;
+  line-height: 50px;
+}
+.DdMenuElement:hover {
+  text-shadow: 0 0 3px #ff0000, 2px 2px 10px black;
+  -webkit-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.8);
+}

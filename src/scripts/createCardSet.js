@@ -6,12 +6,12 @@ import flashCardsSets from './database.js';
 
 const createCardSet = function(catName, n) {
   const keys = Object.keys(flashCardsSets);
-  if (catName !== 0 && !keys.includes(catName)) {
+  if (catName !== 'all' && !keys.includes(catName)) {
     return 'Invalid catName.';
   }
   let questions = [];
 
-  if (catName === 0) {
+  if (catName === 'all') {
     // get questions from all categories
     keys.forEach((key) => {
       questions = [...questions, ...flashCardsSets[key].flashCards];

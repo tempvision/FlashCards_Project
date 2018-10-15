@@ -4,22 +4,44 @@ import { init } from './scripts/init.js';
 import flashCardsSets from './scripts/database.js';
 
 // const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
-const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
+let [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
 $('.modeBtn').click((event) => {
   $(event.target).addClass('active');
   startQuiz();
+});
+$('#category').click((event) => {
+  $(event.target).addClass('active');
+  $('#categoryDropdown').show();
 });
 
 const categoryesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
   allCategories.forEach((el) => {
     $('#categoryDropdown').append(
-      `<span id="${el}">${flashCardsSets[el].categoryName}</span>`
+      `<span id="${el}" class="DdMenuElement">${
+        flashCardsSets[el].categoryName
+      }</span>`
     );
   });
+  $('#categoryDropdown').append(
+    `<span id="all" class="DdMenuElement">All Categories</span>`
+  );
+  $('#categoryDropdown').append(
+    `<span id="CS" class="DdMenuElement">API opentdb.com</span>`
+  );
 };
 categoryesDropdownMenuLoad();
 
+$('.DdMenuElement').click((event) => {
+  $('#categoryDropdown').hide();
+  $('#category')
+    .empty()
+    .text($(event.target).text());
+  catName = event.target.id;
+});
+$('#categoryDropdown').mouseleave((event) => {
+  $('#categoryDropdown').hide();
+});
 const startQuiz = function() {
   $('#results')
     .hide()
@@ -46,7 +68,6 @@ const firstScreenAnimation = function() {
   });
 };
 firstScreenAnimation();
-
 
 const aboutPage = function() {
   $('#about').bind('click', () => {
