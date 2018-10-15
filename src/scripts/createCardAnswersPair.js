@@ -6,7 +6,8 @@ const createCardAnswersPair = function() {
   $('#answersContainer').remove();
   $('#cardText').empty();
   $('#cardText').append(`<p>${currentQuestion.question}<p>`);
-  if ($('#quizMode').css('display') === 'none') {
+  $('#card').show();
+  if ($('#learnMode').hasClass('active')) {
     let deg = 0;
     $('#card').click(() => {
       $('#card').css('transform', `rotateX(${(deg += 180)}deg)`);

@@ -10,12 +10,26 @@
 </head>
 
 <body>
-    <nav><span id="selectMode">Select Mode</span><span>Category</span><span>Stats</span><span>About</span></nav>
+    <nav><span id="selectMode">Select Mode</span><span id="category">All Categories</span><span id="categoryDropdown"></span><span>Stats</span><span>About</span></nav>
     <div id="wrapper">
-        <div class="half"></div>
-        <div class="half"></div>
-        <div id="learnMode" class="modeBtn">LEARN</div>
-        <div id="quizMode" class="modeBtn">QUIZ</div>
+        <div id="firstScreen">
+            <div class="half" id="left"></div>
+            <div class="half" id="right"></div>
+            <div id="learnMode" class="modeBtn">LEARN</div>
+            <div id="quizMode" class="modeBtn">QUIZ</div>
+        </div>
+        <div id="cardScreen" style="display: none">
+            <div id="flip-box">
+                <div id="card" class="deg0">
+                    <div id="cardText"></div>
+                    <div id="cardDescription"></div>
+                </div>
+                <div id="answersContainer"></div>
+            </div>
+            <div id="counter"></div>
+            <div id="results" style="display:none"></div>
+        </div>
+
     </div>
     </div>
 

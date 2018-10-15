@@ -6,22 +6,23 @@ import * as $ from 'jquery';
 let currentQuestion = 0;
 
 const createNext = function() {
-    // creates the elements from the next question
-    if (currentSet.length === 0) {
-        endSession();
-        return;
-    }
+  // creates the elements from the next question
+  if (currentSet.length === 0) {
+    endSession();
+    return;
+  }
 
-    if (currentSet.length === 1) {
-        $('#skipButton').remove();
-    }
-    document.getElementById('counter')
-        .innerHTML = `${Number(window.sessionStorage.currentQuestion)+1}
-                         / ${window.sessionStorage.questionsAmount}`;
-    currentQuestion = currentSet.pop();
+  if (currentSet.length === 1) {
+    $('#skipButton').remove();
+  }
+  $('#counter').empty().append(`${Number(
+    window.sessionStorage.currentQuestion
+  ) + 1}
+                         / ${window.sessionStorage.questionsAmount}`);
+  currentQuestion = currentSet.pop();
 
-    createCardAnswersPair(currentQuestion);
-    window.sessionStorage.currentQuestion++;
+  createCardAnswersPair(currentQuestion);
+  window.sessionStorage.currentQuestion++;
 };
 
 export { createNext, currentQuestion };

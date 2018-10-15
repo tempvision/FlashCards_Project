@@ -1,32 +1,46 @@
 import * as $ from 'jquery';
 import { init } from './scripts/init.js';
+// import firstScreenAnimation from './scripts/firstScreenAnimation.js';
+import flashCardsSets from './scripts/database.js';
 
-const [catName, cardAmount, difficulty] = ['jsBasics', 5, 'easy'];
-$('#quizMode').click(() => {
+// const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
+const [catName, cardAmount, difficulty] = ['CS', 5, 'easy'];
+$('.modeBtn').click((event) => {
+  $(event.target).addClass('active');
   startQuiz();
 });
-// const skipButton = function() {
-//   currentSet.unshift(currentQuestion);
-//   createNext();
-// };
-const startQuiz = async function() {
-  $('#wrapper')
-    .html('')
-    .append('<div id="flip-box"></div>');
-  $('#flip-box').append('<div id="card" class="deg0"></div>');
-  $('#card').append(
-    '<div id="cardText"></div><div id="cardDescription"></div>'
-  );
-  $('#wrapper').append(' <div id="inQuiz">QUIZ</div>');
-  await init(catName, cardAmount, difficulty);
-};
-$('#selectMode').click(async () => {
-  $('#wrapper')
-    .html('')
-    .append('<div class="half"></div><div class="half"></div>')
-    .append('<div id="learnMode" class="modeBtn">LEARN</div>')
-    .append('<div id="quizMode" class="modeBtn">QUIZ</div>');
-  await $('#quizMode').click(() => {
-    startQuiz();
+
+const categoryesDropdownMenuLoad = function() {
+  const allCategories = Object.keys(flashCardsSets);
+  allCategories.forEach((el) => {
+    $('#categoryDropdown').append(
+      `<span id="${el}">${flashCardsSets[el].categoryName}</span>`
+    );
   });
+};
+categoryesDropdownMenuLoad();
+
+const startQuiz = function() {
+  $('#results')
+    .hide()
+    .html('');
+  $('#firstScreen').hide();
+  init(catName, cardAmount, difficulty);
+  $('#cardScreen').css('display', 'flex');
+  $('#flip-box').show();
+};
+
+$('#selectMode').click(() => {
+  $('#cardScreen').hide();
+  $('#firstScreen').css('display', 'flex');
+  $('.modeBtn').removeClass('active');
 });
+const firstScreenAnimation = function() {
+  $('#left').bind('mouseover', () => {
+    $('.half').addClass('halfActive');
+  });
+  $('#right').bind('mouseover', () => {
+    $('.half').removeClass('halfActive');
+  });
+};
+firstScreenAnimation();

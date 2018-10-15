@@ -1,4 +1,4 @@
-import { createCardSet } from './createCardSet.js'
+import { createCardSet } from './createCardSet.js';
 import * as $ from 'jquery';
 import { createNext } from './createNext.js';
 import { skipButton } from './skipButton.js';
@@ -11,26 +11,21 @@ const init = function(catName, questionsAmount, difficulty) {
   window.sessionStorage.correctAmount = 0;
   window.sessionStorage.currentQuestion = 0;
 
-  $(
-    `<div id="counter">${1}/ ${questionsAmount} </div>`
-  ).insertAfter('#flip-box');
+  $('#counter').append(`${1}/ ${questionsAmount}`);
 
   if (catName === 'CS') {
     api.onResult((res) => {
-        currentSet = res;
-        console.log(currentSet);
-        createNext();
-        skipButton();
+      currentSet = res;
+      createNext();
+      skipButton();
     });
 
     currentSet = api.apiGet(questionsAmount, difficulty);
-} else {
-
-    currentSet = createCardSet(catName, questionsAmount);  
-    console.log(currentSet)
+  } else {
+    currentSet = createCardSet(catName, questionsAmount);
     createNext();
     skipButton();
-}
+  }
 };
 
 export { init, currentSet };

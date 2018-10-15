@@ -21,7 +21,7 @@
 // };
 
 const flashCardsSets = {
-  jsBasics: {
+  JSBasics: {
     categoryName: 'JS Basics',
     flashCards: [
       {
@@ -283,7 +283,7 @@ const flashCardsSets = {
     ],
   },
   DSABasics: {
-    categoryName: 'DSABasics',
+    categoryName: 'DSA Basics',
     flashCards: [
       {
         question: `Which one of the following is incorrect: `,
@@ -300,11 +300,13 @@ const flashCardsSets = {
           },
           {
             rigth: false,
-            text: 'Binary search algorithm is logarithmic running-time algorithm',
+            text:
+              'Binary search algorithm is logarithmic running-time algorithm',
           },
           {
             rigth: false,
-            text: 'Binary search algorithm has a recursive and iterative implementations',
+            text:
+              'Binary search algorithm has a recursive and iterative implementations',
           },
           {
             rigth: false,
@@ -371,11 +373,10 @@ const flashCardsSets = {
           },
         ],
       },
-
     ],
   },
   JSAdvanced: {
-    categoryName: 'JSAdvanced',
+    categoryName: 'JS Advanced',
     flashCards: [
       {
         question: `What will the code below output to the console and why?<br>

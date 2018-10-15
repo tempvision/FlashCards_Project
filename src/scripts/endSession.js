@@ -27,12 +27,14 @@ const endSession = function() {
     window.localStorage.totalCorrectQuestionsAmount = totalCorrect;
   }
 
-  $('#card').empty();
+  $('#card').hide();
   $('#answersContainer').empty();
+  $('#flip-box').hide();
 
   // display the results
-  $('#wrapper').append(`<div id="results">Your result: ${totalCorrect}
-                                                    /${questionsAmount}</div>`);
+  $('#results')
+    .show()
+    .append(`Your result: ${totalCorrect}/${questionsAmount}`);
 };
 
 export default endSession;
