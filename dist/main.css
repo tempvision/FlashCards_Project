@@ -113,7 +113,7 @@ nav span:hover {
 
 #results {
   width: 350px;
-  height: 75px;
+  border-radius: 8px; 
   margin: auto;
   font-size: 50px;
   background: rgb(212, 26, 119);
@@ -218,3 +218,21 @@ nav span:hover {
   z-index: 100;
   width: 100px;
 }
+
+.aboutPage {
+  width: 80%;
+  display: none;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 25px;
+  margin: auto;
+  background-color: rgba(232, 128, 88, 0.7)
+}
+
+.border_shadow {
+  -webkit-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
+  -moz-box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
+  box-shadow: 1px 17px 41px -4px rgba(0, 0, 0, 0.69);
+  }

@@ -4,8 +4,7 @@ import { init } from './scripts/init.js';
 import flashCardsSets from './scripts/database.js';
 
 // const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
-const [catName, cardAmount, difficulty] = ['CS', 5, 'easy'];
-
+const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
 $('.modeBtn').click((event) => {
   $(event.target).addClass('active');
   startQuiz();
@@ -42,6 +41,8 @@ const startQuiz = function() {
 
 $('#selectMode').click(() => {
   $('#cardScreen').hide();
+  $('.aboutPage').hide();
+  aboutPage();
   $('#firstScreen').css('display', 'flex');
   $('.modeBtn').removeClass('active');
 });
@@ -75,3 +76,13 @@ const statScreenLoad = () => {
     statScreenLoad();
   });
 };
+
+const aboutPage = function() {
+  $('#about').bind('click', () => {
+    $('.aboutPage').css('display', 'block');
+    $('#firstScreen').css('display', 'none');
+    $('#cardScreen').css('display', 'none');
+  });
+};
+
+aboutPage();
