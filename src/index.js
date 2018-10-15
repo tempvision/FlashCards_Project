@@ -1,25 +1,32 @@
 import * as $ from 'jquery';
 import { init } from './scripts/init.js';
-// import firstScreenAnimation from './scripts/firstScreenAnimation.js';
+import firstScreenAnimation from './scripts/firstScreenAnimation.js';
 import flashCardsSets from './scripts/database.js';
 
-// const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
-let [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
-
+let catName = 'all';
+const cardAmount = 5;
+const difficulty = 'easy';
 $('.modeBtn').click((event) => {
   $(event.target).addClass('active');
   startQuiz();
+});
+$('#category').click((event) => {
+  $(event.target).addClass('active');
+  $('#categoryDropdown').show();
 });
 $('#statScreen').bind('click', () => {
   statScreenLoad();
 });
 
 const visualizer = function(menuButtonId) {
-  $('#wrapper').children().hide();
+  $('#wrapper')
+    .children()
+    .hide();
   $(`#${menuButtonId}`).show();
 };
 
 // visualizer('statScreenDiv');
+
 const categoriesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
   allCategories.forEach((el) => {
@@ -61,14 +68,7 @@ const startQuiz = function() {
 $('#selectMode').click(() => {
   visualizer('firstScreen');
 });
-const firstScreenAnimation = function() {
-  $('#left').bind('mouseover', () => {
-    $('.half').addClass('halfActive');
-  });
-  $('#right').bind('mouseover', () => {
-    $('.half').removeClass('halfActive');
-  });
-};
+
 firstScreenAnimation();
 
 const statScreenLoad = () => {
