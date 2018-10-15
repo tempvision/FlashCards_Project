@@ -14,7 +14,8 @@ $('#category').click((event) => {
   $(event.target).addClass('active');
   $('#categoryDropdown').show();
 });
-$('#statScreen').bind('click', () => {
+
+$('#statScreenBtn').bind('click', () => {
   statScreenLoad();
 });
 
@@ -24,8 +25,6 @@ const visualizer = function(menuButtonId) {
     .hide();
   $(`#${menuButtonId}`).show();
 };
-
-$('#statScreenBtn').bind('click', () => statScreenLoad());
 
   $('#about').bind('click', () => {
     visualizer('aboutPage');
