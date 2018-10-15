@@ -115,12 +115,14 @@ nav {
 #results {
   width: 350px;
   border-radius: 8px;
-  margin: auto;
+  margin-top: 350px;
   font-size: 50px;
   background: rgb(212, 26, 119);
   color: white;
   cursor: pointer;
   text-align: center;
+  align-self: auto;
+  
 }
 
 #counter {

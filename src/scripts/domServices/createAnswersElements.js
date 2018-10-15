@@ -1,8 +1,8 @@
-import shuffle from './shuffle.js';
+import shuffle from '../cardServices/shuffle.js';
 import * as $ from 'jquery';
-import { checkIfTrue } from './checkIfTrue.js';
-import { createNext } from './createNext.js';
-const flippingCurrentCard = function () {
+import { checkIfTrue } from '../cardServices/checkIfTrue.js';
+import { createNext } from '../createNext.js';
+const flippingCurrentCard = function() {
   const el = $('#card');
   const elClass = el.attr('class');
   const deg = +elClass.substr(3) + 360;
@@ -13,7 +13,7 @@ const flippingCurrentCard = function () {
     createNext();
   }, 500);
 };
-const createAnswersElements = function (answers) {
+const createAnswersElements = function(answers) {
   answers = shuffle(answers, 3);
   $('#flip-box').append('<div id="answersContainer"></div>');
   answers.forEach((answer, i) => {
@@ -44,7 +44,7 @@ const createAnswersElements = function (answers) {
       .slideDown(800, 'swing')
       .css('opacity', 0)
       .animate({ opacity: 1 }, { queue: false, duration: 1000 });
-  };
+  }
 };
 
 export default createAnswersElements;

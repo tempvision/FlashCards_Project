@@ -1,5 +1,5 @@
 import shuffle from './shuffle.js';
-import flashCardsSets from './database.js';
+import flashCardsSets from '../../db/database.js';
 
 // receives category name(0 for all categories) + number of questions to return
 // returns array of questions

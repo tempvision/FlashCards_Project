@@ -1,6 +1,6 @@
-import createAnswersElements from './createAnswersElements.js';
+import createAnswersElements from '../domServices/createAnswersElements.js';
 import * as $ from 'jquery';
-import { currentQuestion } from './createNext.js';
+import { currentQuestion } from '../createNext.js';
 
 const createCardAnswersPair = function() {
   $('#answersContainer').remove();
