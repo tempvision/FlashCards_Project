@@ -32,6 +32,8 @@ const startQuiz = function() {
 
 $('#selectMode').click(() => {
   $('#cardScreen').hide();
+  $('.aboutPage').hide();
+  aboutPage();
   $('#firstScreen').css('display', 'flex');
   $('.modeBtn').removeClass('active');
 });
@@ -44,3 +46,12 @@ const firstScreenAnimation = function() {
   });
 };
 firstScreenAnimation();
+
+
+const aboutPage = function() {
+  $('#about').bind('click', () => {
+    $('.aboutPage').css('display', 'block');
+    $('#firstScreen').css('display', 'none');
+  });
+};
+aboutPage();
