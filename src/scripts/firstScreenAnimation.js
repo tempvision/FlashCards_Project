@@ -7,4 +7,4 @@ const firstScreenAnimation = function() {
     $('.half').removeClass('halfActive');
   });
 };
-export { firstScreenAnimation };
+export default firstScreenAnimation;
