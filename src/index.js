@@ -1,31 +1,32 @@
 import * as $ from 'jquery';
 import { init } from './scripts/init.js';
-// import firstScreenAnimation from './scripts/firstScreenAnimation.js';
+import firstScreenAnimation from './scripts/firstScreenAnimation.js';
 import flashCardsSets from './scripts/database.js';
 
-// const [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
-let [catName, cardAmount, difficulty] = ['JSBasics', 5, 'easy'];
+let catName = 'all';
+const cardAmount = 5;
+const difficulty = 'easy';
 $('.modeBtn').click((event) => {
   $(event.target).addClass('active');
   startQuiz();
 });
-<<<<<<< HEAD
 $('#category').click((event) => {
   $(event.target).addClass('active');
   $('#categoryDropdown').show();
 });
-=======
 $('#statScreen').bind('click', () => {
   statScreenLoad();
 });
 
 const visualizer = function(menuButtonId) {
-  $('#wrapper').children().hide();
-    $(`#${menuButtonId}`).show();
-  };
->>>>>>> 430d66697b989180eebedb889d545a2a9b303574
+  $('#wrapper')
+    .children()
+    .hide();
+  $(`#${menuButtonId}`).show();
+};
 
-visualizer("statScreenDiv");
+// visualizer('statScreenDiv');
+
 const categoriesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
   allCategories.forEach((el) => {
@@ -71,38 +72,32 @@ $('#selectMode').click(() => {
   $('#firstScreen').css('display', 'flex');
   $('.modeBtn').removeClass('active');
 });
-const firstScreenAnimation = function() {
-  $('#left').bind('mouseover', () => {
-    $('.half').addClass('halfActive');
-  });
-  $('#right').bind('mouseover', () => {
-    $('.half').removeClass('halfActive');
-  });
-};
+
 firstScreenAnimation();
 
-<<<<<<< HEAD
-=======
 const statScreenLoad = () => {
-  //visualizer('statScreenDiv');
+  // visualizer('statScreenDiv');
 
-  $('#totalAnsweredQuestions')
-  .append(`${window.localStorage.totalQuestionsAmount}`);
-  $('#correctAnswers')
-  .append(`${window.localStorage.totalCorrectQuestionsAmount}`);
-  $('#successRate')
-  .append(`${Math.floor(window.localStorage.totalCorrectQuestionsAmount*100
-                        /window.localStorage.totalQuestionsAmount)}`);
+  $('#totalAnsweredQuestions').append(
+    `${window.localStorage.totalQuestionsAmount}`
+  );
+  $('#correctAnswers').append(
+    `${window.localStorage.totalCorrectQuestionsAmount}`
+  );
+  $('#successRate').append(
+    `${Math.floor(
+      (window.localStorage.totalCorrectQuestionsAmount * 100) /
+        window.localStorage.totalQuestionsAmount
+    )}`
+  );
 
-  $(`#clearStatsButton`)
-  .bind('click', () => {
-    window.localStorage.totalCorrectQuestionsAmount='0';
-    window.localStorage.totalQuestionsAmount='0';
+  $(`#clearStatsButton`).bind('click', () => {
+    window.localStorage.totalCorrectQuestionsAmount = '0';
+    window.localStorage.totalQuestionsAmount = '0';
     statScreenLoad();
   });
 };
 
->>>>>>> 430d66697b989180eebedb889d545a2a9b303574
 const aboutPage = function() {
   $('#about').bind('click', () => {
     $('.aboutPage').css('display', 'block');

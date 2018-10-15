@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-const firstScreenAnimation = function() {
+const firstScreenAnimation = () => {
   $('#left').bind('mouseover', () => {
     $('.half').addClass('halfActive');
   });
@@ -7,4 +7,4 @@ const firstScreenAnimation = function() {
     $('.half').removeClass('halfActive');
   });
 };
-export { firstScreenAnimation };
+export default firstScreenAnimation;
