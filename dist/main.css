@@ -213,7 +213,7 @@ nav span:hover {
   height: 100%;
 }
 #categoryDropdown {
-  display: block;
+  display: none;
   position: absolute;
   z-index: 100;
   width: 100px;

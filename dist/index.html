@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav><span id="selectMode">Select Mode</span><span id="category">All Categories</span><span id="categoryDropdown"></span><span>Stats</span><span>About</span></nav>
+    <nav><span id="selectMode">Select Mode</span><span id="category">All Categories</span><span id="categoryDropdown"></span><span id='statScreenButton'>Stats</span><span>About</span></nav>
     <div id="wrapper">
         <div id="firstScreen">
             <div class="half" id="left"></div>
@@ -28,6 +28,13 @@
             </div>
             <div id="counter"></div>
             <div id="results" style="display:none"></div>
+        </div>
+        <div id="statScreen">
+                <div>Total answered questions:<span id="totalAnsweredQuestions"></span> </div><br>
+                    <div>Correct answers:<span id="correctAnswers"></span> </div>
+                    <div>Success rate:<span id="successRate"></span>
+                    </div>    
+            
         </div>
 
     </div>

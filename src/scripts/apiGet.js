@@ -34,7 +34,7 @@ const apiGet = function(questionsAmount, difficulty, type) {
   // questions amount <50, difficulty: any, easy, medium, hard,
   // type: multiple, boolean, any
 
-  let requestURL = 'https://opentdb.com/api.php?category=18df';
+  let requestURL = 'https://opentdb.com/api.php?category=18';
   if (type === 'boolean' || type === 'multiple') {
     requestURL += `$type=${type}`;
   }
