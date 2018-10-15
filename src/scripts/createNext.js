@@ -15,10 +15,13 @@ const createNext = function() {
   if (currentSet.length === 1) {
     $('#skipButton').remove();
   }
-  $('#counter').empty().append(`${Number(
-    window.sessionStorage.currentQuestion
-  ) + 1}
-                         / ${window.sessionStorage.questionsAmount}`);
+  $('#counter')
+    .empty()
+    .append(
+      `${Number(window.sessionStorage.currentQuestion) + 1}/${
+        window.sessionStorage.questionsAmount
+      }`
+    );
   currentQuestion = currentSet.pop();
 
   createCardAnswersPair(currentQuestion);

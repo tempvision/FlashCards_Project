@@ -2,10 +2,11 @@ import shuffle from './shuffle.js';
 import * as $ from 'jquery';
 import { checkIfTrue } from './checkIfTrue.js';
 import { createNext } from './createNext.js';
-const flippingCurrentCard = function () {
+const flippingCurrentCard = function(mode) {
+  const grad = mode === 'quiz' ? 360 : 180;
   const el = $('#card');
   const elClass = el.attr('class');
-  const deg = +elClass.substr(3) + 360;
+  const deg = +elClass.substr(3) + grad;
   el.css('transform', `rotateX(${deg}deg)`)
     .removeClass(elClass)
     .addClass(`deg${deg}`);
@@ -13,7 +14,7 @@ const flippingCurrentCard = function () {
     createNext();
   }, 500);
 };
-const createAnswersElements = function (answers) {
+const createAnswersElements = function(answers) {
   answers = shuffle(answers, 3);
   $('#flip-box').append('<div id="answersContainer"></div>');
   answers.forEach((answer, i) => {
@@ -23,7 +24,7 @@ const createAnswersElements = function (answers) {
     $(`#ans${i}`).bind('click', () => {
       checkIfTrue(i, answers);
       setTimeout(() => {
-        flippingCurrentCard();
+        flippingCurrentCard('quiz');
       }, 700);
     });
   });
@@ -35,7 +36,7 @@ const createAnswersElements = function (answers) {
     $(`#ans3`).bind('click', () => {
       checkIfTrue(3, answers);
       setTimeout(() => {
-        flippingCurrentCard();
+        flippingCurrentCard('quiz');
       }, 700);
     });
 
@@ -44,7 +45,7 @@ const createAnswersElements = function (answers) {
       .slideDown(800, 'swing')
       .css('opacity', 0)
       .animate({ opacity: 1 }, { queue: false, duration: 1000 });
-  };
+  }
 };
 
-export default createAnswersElements;
+export { createAnswersElements, flippingCurrentCard };

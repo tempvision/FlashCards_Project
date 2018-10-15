@@ -471,31 +471,19 @@ const flashCardsSets = {
         answers: [
           {
             rigth: true,
-            text: `1<br>
-            4<br>
-            3<br>
-            2`,
+            text: `1 4 3 2`,
           },
           {
             rigth: false,
-            text: `1<br>
-            3<br>
-            2<br>
-            4`,
+            text: `1 3 2 4`,
           },
           {
             rigth: false,
-            text: `1<br>
-            2<br>
-            3<br>
-            4`,
+            text: `1 2 3 4`,
           },
           {
             rigth: false,
-            text: `2<br>
-            3<br>
-            4<br>
-            1`,
+            text: `2 3 4 1`,
           },
         ],
       },

@@ -26,16 +26,16 @@ const visualizer = function(menuButtonId) {
   $(`#${menuButtonId}`).show();
 };
 
-  $('#about').bind('click', () => {
-    visualizer('aboutPage');
-  });
+$('#about').bind('click', () => {
+  visualizer('aboutPage');
+});
 
 const categoriesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
   allCategories.forEach((el) => {
     $('#categoryDropdown').append(
       `<span id="${el}" class="DdMenuElement">${
-      flashCardsSets[el].categoryName
+        flashCardsSets[el].categoryName
       }</span>`
     );
   });
@@ -77,20 +77,24 @@ firstScreenAnimation();
 const statScreenLoad = () => {
   visualizer('statScreenDiv');
 
-  $('#totalAnsweredQuestions').empty()
+  $('#totalAnsweredQuestions')
+    .empty()
     .append(`${window.localStorage.totalQuestionsAmount}`);
-  $('#correctAnswers').empty()
+  $('#correctAnswers')
+    .empty()
     .append(`${window.localStorage.totalCorrectQuestionsAmount}`);
-  $('#successRate').empty()
-    .append(`${Math.floor(window.localStorage.totalCorrectQuestionsAmount * 100
-      / window.localStorage.totalQuestionsAmount)}`);
+  $('#successRate')
+    .empty()
+    .append(
+      `${Math.floor(
+        (window.localStorage.totalCorrectQuestionsAmount * 100) /
+          window.localStorage.totalQuestionsAmount
+      )}`
+    );
 
-  $(`#clearStatsButton`)
-    .bind('click', () => {
-      window.localStorage.totalCorrectQuestionsAmount = '0';
-      window.localStorage.totalQuestionsAmount = '0';
-      statScreenLoad();
-    });
+  $(`#clearStatsButton`).bind('click', () => {
+    window.localStorage.totalCorrectQuestionsAmount = '0';
+    window.localStorage.totalQuestionsAmount = '0';
+    statScreenLoad();
+  });
 };
-
-
