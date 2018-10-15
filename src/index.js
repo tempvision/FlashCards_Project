@@ -25,7 +25,11 @@ const visualizer = function(menuButtonId) {
   $(`#${menuButtonId}`).show();
 };
 
-// visualizer('statScreenDiv');
+$('#statScreenBtn').bind('click', () => statScreenLoad());
+
+  $('#about').bind('click', () => {
+    visualizer('aboutPage');
+  });
 
 const categoriesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
@@ -90,8 +94,4 @@ const statScreenLoad = () => {
     });
 };
 
-$('#statScreenBtn').bind('click', () => statScreenLoad());
 
-  $('#about').bind('click', () => {
-    visualizer('aboutPage');
-  });
