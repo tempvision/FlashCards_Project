@@ -9,12 +9,24 @@ $('.modeBtn').click((event) => {
   $(event.target).addClass('active');
   startQuiz();
 });
+<<<<<<< HEAD
 $('#category').click((event) => {
   $(event.target).addClass('active');
   $('#categoryDropdown').show();
 });
+=======
+$('#statScreen').bind('click', () => {
+  statScreenLoad();
+});
 
-const categoryesDropdownMenuLoad = function() {
+const visualizer = function(menuButtonId) {
+  $('#wrapper').children().hide();
+    $(`#${menuButtonId}`).show();
+  };
+>>>>>>> 430d66697b989180eebedb889d545a2a9b303574
+
+visualizer("statScreenDiv");
+const categoriesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
   allCategories.forEach((el) => {
     $('#categoryDropdown').append(
@@ -30,7 +42,7 @@ const categoryesDropdownMenuLoad = function() {
     `<span id="CS" class="DdMenuElement">API opentdb.com</span>`
   );
 };
-categoryesDropdownMenuLoad();
+categoriesDropdownMenuLoad();
 
 $('.DdMenuElement').click((event) => {
   $('#categoryDropdown').hide();
@@ -69,6 +81,28 @@ const firstScreenAnimation = function() {
 };
 firstScreenAnimation();
 
+<<<<<<< HEAD
+=======
+const statScreenLoad = () => {
+  //visualizer('statScreenDiv');
+
+  $('#totalAnsweredQuestions')
+  .append(`${window.localStorage.totalQuestionsAmount}`);
+  $('#correctAnswers')
+  .append(`${window.localStorage.totalCorrectQuestionsAmount}`);
+  $('#successRate')
+  .append(`${Math.floor(window.localStorage.totalCorrectQuestionsAmount*100
+                        /window.localStorage.totalQuestionsAmount)}`);
+
+  $(`#clearStatsButton`)
+  .bind('click', () => {
+    window.localStorage.totalCorrectQuestionsAmount='0';
+    window.localStorage.totalQuestionsAmount='0';
+    statScreenLoad();
+  });
+};
+
+>>>>>>> 430d66697b989180eebedb889d545a2a9b303574
 const aboutPage = function() {
   $('#about').bind('click', () => {
     $('.aboutPage').css('display', 'block');
