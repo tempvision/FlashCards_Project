@@ -9,7 +9,7 @@ $('.modeBtn').click((event) => {
   $(event.target).addClass('active');
   startQuiz();
 });
-$('#statScreenButton').bind('click', () => {
+$('#statScreen').bind('click', () => {
   statScreenLoad();
 });
 
@@ -18,7 +18,7 @@ const visualizer = function(menuButtonId) {
     $(`#${menuButtonId}`).show();
   };
 
-visualizer("firstScreen");
+visualizer("statScreenDiv");
 const categoriesDropdownMenuLoad = function() {
   const allCategories = Object.keys(flashCardsSets);
   allCategories.forEach((el) => {
@@ -57,8 +57,7 @@ const firstScreenAnimation = function() {
 firstScreenAnimation();
 
 const statScreenLoad = () => {
-  $('#statScreen').empty();
-  $(`#firstScreen`).hide();
+  //visualizer('statScreenDiv');
 
   $('#totalAnsweredQuestions')
   .append(`${window.localStorage.totalQuestionsAmount}`);
@@ -68,8 +67,7 @@ const statScreenLoad = () => {
   .append(`${Math.floor(window.localStorage.totalCorrectQuestionsAmount*100
                         /window.localStorage.totalQuestionsAmount)}`);
 
-  $(`#statScreen`)
-  .append(`<button id='clearStatsButton'>Clear you statistics</button>`)
+  $(`#clearStatsButton`)
   .bind('click', () => {
     window.localStorage.totalCorrectQuestionsAmount='0';
     window.localStorage.totalQuestionsAmount='0';
