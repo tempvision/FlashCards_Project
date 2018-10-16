@@ -8,7 +8,6 @@ const flippingCurrentCard = function(mode) {
   const el = $('#card');
   const elClass = el.attr('class');
   const deg = +elClass.substr(3) + grad;
-  console.log(grad, deg);
   el.css('transform', `rotateX(${deg}deg)`)
     .removeClass(elClass)
     .addClass(`deg${deg}`);
