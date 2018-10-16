@@ -13,6 +13,12 @@ The application has two modes:
 - a learning mode — the user selects a thematic set of cards and browse their content;
 - a quiz - the user must select one of the provided options to answer the question contained in the card.
 
+**Used tools:**
+
+- Jquery
+- Webpack
+- [The Open Trivia Database](https://opentdb.com/) JSON API
+
 **Additional links:**
 
 - [Trello](https://trello.com/b/SJMvbty4/flipping-cards)
