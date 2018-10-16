@@ -9,7 +9,9 @@ const createCardAnswersPair = function() {
     .append(`<p>${currentQuestion.question}<p>`);
   $('#card').show();
   if ($('#learnMode').hasClass('active')) {
-    let deg = 0;
+    let deg = +$('#card')
+      .attr('class')
+      .substr(3);
     $('#card').click(() => {
       $('#card').css('transform', `rotateX(${(deg += 180)}deg)`);
       $('#card')

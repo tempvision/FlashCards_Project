@@ -22,7 +22,7 @@ const skipButton = function() {
       .append('Next')
       .bind('click', () => {
         // calling the next question
-        flippingCurrentCard();
+        // flippingCurrentCard();
         setTimeout(() => {
           createNext();
         }, 200);
