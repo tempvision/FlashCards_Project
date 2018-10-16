@@ -7,6 +7,11 @@ let currentSet = [];
 
 const init = function(catName, questionsAmount, difficulty) {
   // starts results counter in session storage
+  $('#results').hide();
+  $('#answersContainer').show();
+  $('#flip-box').show();
+  $('#counter').show();
+  $('#skipButton').show();
   window.sessionStorage.questionsAmount = questionsAmount;
   window.sessionStorage.correctAmount = 0;
   window.sessionStorage.currentQuestion = 0;

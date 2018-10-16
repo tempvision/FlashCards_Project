@@ -7,7 +7,7 @@ const skipButton = function() {
   $('#skipButton').show();
   if ($('#quizMode').hasClass('active')) {
     $('#skipButton')
-      .empty()
+      .html('')
       .append('Skip')
       .bind('click', () => {
         // putting back the current question in the card set
@@ -18,7 +18,7 @@ const skipButton = function() {
       });
   } else {
     $('#skipButton')
-      .empty()
+      .html('')
       .append('Next')
       .bind('click', () => {
         // calling the next question

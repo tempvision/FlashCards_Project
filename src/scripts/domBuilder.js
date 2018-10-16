@@ -6,7 +6,8 @@ import { statScreenUpdate } from './domServices/statScreenUpdate.js';
 import { visualizer } from './domServices/visualizer.js';
 let catName = 'all';
 const cardAmount = 5;
-const difficulty = 'easy';
+const difficulty = 'easy'
+;
 const menuActiveSwitch = (element) => {
   $('.menuActive').removeClass('menuActive');
   $(element).addClass('menuActive');

@@ -13,7 +13,7 @@ const createNext = function() {
   }
 
   if (currentSet.length === 1) {
-    $('#skipButton').remove();
+    $('#skipButton').hide();
   }
   $('#counter')
     .empty()

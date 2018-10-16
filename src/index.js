@@ -2,9 +2,9 @@ import * as $ from 'jquery';
 import { init } from './scripts/init.js';
 import { returnData, visualizer } from './scripts/domBuilder.js';
 
-const startQuiz = function() {
+const startQuiz = function () {
   visualizer('cardScreen');
-  init(...returnData());
+  init('all', 2, 'easy');
   $('.menuActive').removeClass('menuActive');
   $('#card')
     .removeClass()

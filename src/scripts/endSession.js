@@ -33,6 +33,7 @@ const endSession = function() {
   $('#counter').hide();
   // display the results
   $('#results')
+  .html('')
     .show()
     .append(`Your result: ${totalCorrect}/${questionsAmount}`);
 };
