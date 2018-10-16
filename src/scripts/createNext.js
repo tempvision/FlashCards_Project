@@ -5,7 +5,7 @@ import * as $ from 'jquery';
 
 let currentQuestion = 0;
 
-const createNext = function() {
+const createNext = function () {
   // creates the elements from the next question
   if (currentSet.length === 0) {
     endSession();
@@ -14,12 +14,13 @@ const createNext = function() {
 
   if (currentSet.length === 1) {
     $('#skipButton').hide();
+    $( '#skipButton' ).unbind();
   }
   $('#counter')
     .empty()
     .append(
       `${Number(window.sessionStorage.currentQuestion) + 1}/${
-        window.sessionStorage.questionsAmount
+      window.sessionStorage.questionsAmount
       }`
     );
   currentQuestion = currentSet.pop();

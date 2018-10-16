@@ -9,7 +9,7 @@ const skipButton = function() {
     $('#skipButton')
       .html('')
       .append('Skip')
-      .bind('click', () => {
+      .click(() => {
         // putting back the current question in the card set
         currentSet.unshift(currentQuestion);
         window.sessionStorage.currentQuestion--;
@@ -20,7 +20,7 @@ const skipButton = function() {
     $('#skipButton')
       .html('')
       .append('Next')
-      .bind('click', () => {
+      .click(() => {
         // calling the next question
         // flippingCurrentCard();
         setTimeout(() => {
